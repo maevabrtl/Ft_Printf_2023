@@ -49,12 +49,7 @@ int	search_format_specifier(char *str, int i_str, int i_format, char *format)
 		while (format[i_format] && *(str + i_str) != format[i_format])
 			i_format++;
 		if (format[i_format] == '\0')
-		{
-			ft_putstr_fd("Error : invalid conversion specifier \'", 2);
-			write(2, &str[i_str], 1);
-			ft_putstr_fd("\'. Supported ones are \"cspdiuxX%\".\n", 2);
 			return (-1);
-		}
 		return (i_str + 1);
 	}
 	return (i_str);
@@ -71,10 +66,7 @@ int	read_and_print(char *str, va_list args)
 	{
 		index = search_format_specifier(str, 0, 0, "cspdiuxX%");
 		if (index == -1)
-		{
-			str++;
-			index = 1;
-		}
+			return (nb_written);
 		if (*str == '%')
 			checker = format_args(args, str);
 		else
