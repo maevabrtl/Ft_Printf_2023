@@ -6,7 +6,7 @@
 #    By: Maya <Maya@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/18 13:26:09 by mabertha          #+#    #+#              #
-#    Updated: 2023/10/14 05:10:58 by Maya             ###   ########.fr        #
+#    Updated: 2023/10/14 06:08:44 by Maya             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_putnbrbase.c 
 ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c \
 ft_tolower.c ft_toupper.c ft_utoabase.c ft_strndup.c ft_lstadd_back.c \
 ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c ft_lstfree.c ft_lstiter.c \
-ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c ft_putnbrunsignedbase.c ft_putstr_withsize_fd.c
+ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c ft_putstr_withsize_fd.c
 
 OBJS = $(SRCS:.c=.o)
 INC = libft.h

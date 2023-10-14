@@ -1,9 +1,9 @@
 #include "libft.h"
 
-int	ft_putnbrbase(long nbr, char *base)
+int	ft_putnbrbase(size_t nbr, char *base)
 {
-	int		base_len;
-	long	check;
+	size_t	base_len;
+	int		check;
 
 	check = 0;
 	base_len = ft_strlen(base);

@@ -1,5 +1,5 @@
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 #include "libft/libft.h"
 #include <stdio.h>
@@ -8,15 +8,15 @@
 #include <unistd.h>
 #include <stddef.h>
 
-int		ft_printf(const char *str, ...);
-int		fill_list(char *str, va_list args);
-int		format_args(va_list args, char *str);
-int		get_string_char(va_list args, char *str);
-int		search_format_specifier(char *str);
-int		print_str(t_list **lst);
-int		add_new_node(char *str, t_list **lst);
-char	*get_pointer_adress(va_list args);
-int		count_length_to_print(t_list **lst);
-char	*char_to_str(char c);
+int	ft_printf(const char *str, ...);
+int	read_and_print(char *str, va_list args);
+int	search_format_specifier(char *str, int i_str, int i_format, char *format);
+int	format_args(va_list args, char *str);
+int	measure_len_nbr(int len, size_t nbr, size_t base);
+int	get_p_arg(void *ptr_arg, char *base);
+int	get_iduxX_args(long arg_nbr, char *base);
+int	get_scpercent_args(char *str, va_list args);
+int	get_cpercent_arg(char format, va_list args);
+int	get_s_arg(char *s_arg);
 
 #endif
