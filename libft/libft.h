@@ -6,7 +6,7 @@
 /*   By: Maya <Maya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 13:53:58 by mabertha          #+#    #+#             */
-/*   Updated: 2023/10/13 23:40:27 by Maya             ###   ########.fr       */
+/*   Updated: 2023/10/14 05:17:08 by Maya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,13 @@ char			*ft_strdup(const char *s);
 char			*ft_strndup(const char *str, size_t n);
 char			**ft_split(char const *s, char c);
 void			ft_putstr_fd(char *s, int fd);
+int				ft_putstr_withsize_fd(char *s, int fd, int size);
 void			ft_putnbr_fd(int n, int fd);
+int				ft_putnbrunsignedbase(size_t nbr, char *base);
+int				ft_putnbrbase(long nbr, char *base);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putchar_fd(char c, int fd);
+int				ft_putchar_fd_secure(char c, int fd);
 char			*ft_itoa(int n);
 char			*ft_itoabase(int n, int base);
 char			*ft_utoabase(size_t n, int base, int majbase);

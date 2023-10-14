@@ -11,7 +11,7 @@
 int		ft_printf(const char *str, ...);
 int		fill_list(char *str, va_list args);
 int		format_args(va_list args, char *str);
-char	*get_string_char(va_list args, char *str);
+int		get_string_char(va_list args, char *str);
 int		search_format_specifier(char *str);
 int		print_str(t_list **lst);
 int		add_new_node(char *str, t_list **lst);
