@@ -3,9 +3,9 @@
 void	ft_lstfree(t_list **lst)
 {
 	t_list	*tmp;
-    t_list  *current;
+	t_list	*current;
 
-    current = *lst;
+	current = *lst;
 	while (current != NULL)
 	{
 		tmp = (current->next);
@@ -13,5 +13,5 @@ void	ft_lstfree(t_list **lst)
 		free(current);
 		current = tmp;
 	}
-    *lst = NULL;
+	*lst = NULL;
 }

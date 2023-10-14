@@ -22,7 +22,7 @@ int	get_cpercent_arg(char format, va_list args)
 
 int	get_scpercent_args(char *str, va_list args)
 {
-	int		i;
+	int	i;
 
 	i = 1;
 	while (str[i] == ' ')
@@ -37,7 +37,7 @@ int	get_scpercent_args(char *str, va_list args)
 int	get_iduxX_args(long arg_nbr, char *base)
 {
 	int	nb_written;
-	int check;
+	int	check;
 
 	nb_written = 0;
 	if (arg_nbr == 0)

@@ -2,7 +2,7 @@
 
 int	ft_putstr_withsize_fd(char *s, int fd, int size)
 {
-	int ret;
+	int	ret;
 
 	ret = write(fd, s, size);
 	if (ret == -1)

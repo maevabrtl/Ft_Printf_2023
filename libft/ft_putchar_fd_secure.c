@@ -2,7 +2,7 @@
 
 int	ft_putchar_fd_secure(char c, int fd)
 {
-	int ret;
+	int	ret;
 
 	ret = write(fd, &c, 1);
 	if (ret == -1)

@@ -12,8 +12,8 @@ int	measure_len_nbr(int len, size_t nbr, size_t base)
 
 int	format_args(va_list args, char *str)
 {
-	int		i;
-	int		nb_written;
+	int	i;
+	int	nb_written;
 
 	i = 1;
 	nb_written = 0;

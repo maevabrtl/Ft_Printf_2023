@@ -13,9 +13,9 @@ static size_t	utoa_nbrlen(size_t n, int base)
 	return (nlen);
 }
 
-char		*check_base(int majbase, int base)
+char	*check_base(int majbase, int base)
 {
-	char *str;
+	char	*str;
 
 	if (majbase == 1 && base == 16)
 		str = "0123456789ABCDEF";
@@ -28,15 +28,13 @@ char		*check_base(int majbase, int base)
 	return (str);
 }
 
-#include <stdio.h>
-char		*ft_utoabase(size_t n, int base, int majbase)
+char	*ft_utoabase(size_t n, int base, int majbase)
 {
 	char	*ret;
 	size_t	nlen;
 	size_t	i;
 	char	*strbase;
 
-	// dprintf(2, "1. in utoabase n = %zu, base = %d\n", n, base);
 	strbase = check_base(majbase, base);
 	if (strbase == NULL)
 		return (NULL);
@@ -53,6 +51,5 @@ char		*ft_utoabase(size_t n, int base, int majbase)
 		n /= base;
 		i--;
 	}
-	// dprintf(2, "convert: %s\n", ret);
 	return (ret);
 }

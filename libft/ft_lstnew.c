@@ -2,13 +2,13 @@
 
 t_list	*ft_lstnew(char *content)
 {
-	t_list *lst;
+	t_list	*lst;
 
 	lst = malloc(sizeof(t_list));
 	if (lst == NULL)
 		return (NULL);
 	lst->content = content;
-    if (lst->content == NULL)
+	if (lst->content == NULL)
 	{
 		free(lst);
 		return (NULL);
