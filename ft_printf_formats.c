@@ -17,7 +17,7 @@ int	get_cpercent_arg(char format, va_list args)
 		c_arg = '%';
 	else
 		c_arg = va_arg(args, int);
-	return(write(1, &c_arg, 1));
+	return (write(1, &c_arg, 1));
 }
 
 int	get_scpercent_args(char *str, va_list args)
@@ -30,11 +30,11 @@ int	get_scpercent_args(char *str, va_list args)
 	if (str[i] == 's')
 		return (get_s_arg(va_arg(args, char *)));
 	if (str[i] == 'c' || str[i] == '%')
-		return(get_cpercent_arg(str[i], args));
+		return (get_cpercent_arg(str[i], args));
 	return (ft_putstr_withsize_fd(&(str[1]), 1, 2));
 }
 
-int	get_iduxX_args(long arg_nbr, char *base)
+int	get_idux_args(long arg_nbr, char *base)
 {
 	int	nb_written;
 	int	check;
@@ -54,7 +54,7 @@ int	get_iduxX_args(long arg_nbr, char *base)
 	check = ft_putnbrbase(arg_nbr, base);
 	if (check == -1)
 		return (check);
-	return(nb_written);
+	return (nb_written);
 }
 
 int	get_p_arg(void *ptr_arg, char *base)
@@ -65,7 +65,7 @@ int	get_p_arg(void *ptr_arg, char *base)
 
 	if (ptr_arg == NULL)
 	{
-		nb_written = ft_putstr_withsize_fd("0x0", 1, 3);
+		nb_written = ft_putstr_withsize_fd("(nil)", 1, 5);
 		return (nb_written);
 	}
 	nb_ptr = (size_t)ptr_arg;
@@ -80,5 +80,5 @@ int	get_p_arg(void *ptr_arg, char *base)
 	check = ft_putnbrbase(nb_ptr, base);
 	if (check == -1)
 		return (check);
-	return(nb_written);
+	return (nb_written);
 }

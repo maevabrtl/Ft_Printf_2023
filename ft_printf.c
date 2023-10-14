@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mabertha <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/14 12:43:36 by mabertha          #+#    #+#             */
+/*   Updated: 2023/10/14 12:45:06 by mabertha         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	measure_len_nbr(int len, size_t nbr, size_t base)
@@ -12,25 +24,28 @@ int	measure_len_nbr(int len, size_t nbr, size_t base)
 
 int	format_args(va_list args, char *str)
 {
-	int	i;
-	int	nb_written;
+	int		i;
+	int		nb_written;
+	char	*hexa_maj;
+	char	*hexa_min;
 
 	i = 1;
-	nb_written = 0;
+	hexa_maj = "0123456789ABCDEF";
+	hexa_min = "0123456789abcdef";
 	while (str[i] && str[i] == ' ')
 		i++;
 	if (str[i] == 'u' && str[0] == '%')
-		nb_written = get_iduxX_args(va_arg(args, unsigned int), "0123456789");
+		nb_written = get_idux_args(va_arg(args, unsigned int), "0123456789");
 	else if (str[i] == 'x' && str[0] == '%')
-		nb_written = get_iduxX_args(va_arg(args, unsigned int), "0123456789abcdef");
+		nb_written = get_idux_args(va_arg(args, unsigned int), hexa_min);
 	else if (str[i] == 'X' && str[0] == '%')
-		nb_written = get_iduxX_args(va_arg(args, unsigned int), "0123456789ABCDEF");
+		nb_written = get_idux_args(va_arg(args, unsigned int), hexa_maj);
 	else if (str[i] == 'i' && str[0] == '%')
-		nb_written = get_iduxX_args(va_arg(args, int), "0123456789");
+		nb_written = get_idux_args(va_arg(args, int), "0123456789");
 	else if (str[i] == 'd' && str[0] == '%')
-		nb_written = get_iduxX_args(va_arg(args, int), "0123456789");
+		nb_written = get_idux_args(va_arg(args, int), "0123456789");
 	else if (str[i] == 'p' && str[0] == '%')
-		nb_written = get_p_arg(va_arg(args, void *), "0123456789abcdef");
+		nb_written = get_p_arg(va_arg(args, void *), hexa_min);
 	else if ((str[i] == 'c' || str[i] == 's' || str[i] == '%') && str[0] == '%')
 		nb_written = get_scpercent_args(str, args);
 	return (nb_written);

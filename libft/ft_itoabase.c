@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoabase.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mabertha <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/14 12:46:17 by mabertha          #+#    #+#             */
+/*   Updated: 2023/10/14 12:46:19 by mabertha         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int	nbrlen(int n, int base)
@@ -31,9 +43,7 @@ static int	neg(int n, char *ret)
 	return (-n);
 }
 
-#include <stdio.h>
-
-char		*ft_itoabase(int n, int base)
+char	*ft_itoabase(int n, int base)
 {
 	char	*ret;
 	int		nlen;
